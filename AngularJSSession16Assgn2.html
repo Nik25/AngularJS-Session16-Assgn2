@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS-Session16-Assign2</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+</head>
+<body>
+    <script>
+	var app= angular.module('myApp',[]);
+	app.constant("appName", "My Cool App!");
+        
+	// Now we inject our constant value into a test controller
+app.controller("TestCtrl", ["appName", function TestCtrl(appName) {
+    console.log(appName);
+    alert(appName);
+}]);
+    </script>
+
+    <div ng-controller="TestCtrl">
+        <h2> An Example of constants service usage in controller. The alert message when loading the file shows the constant value.</h2>
+        <h3> Also check console log to view the constants value.</h3>
+       
+    </div>
+</body>
+
+
+</html>
